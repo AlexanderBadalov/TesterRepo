@@ -18,8 +18,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
   env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: be91d2b036bc4907a95318631066cb0e75225bd9
 - task: Maven@3
   inputs:
     mavenPomFile: 'maven-multimodule/pom.xml'
