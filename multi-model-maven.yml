@@ -17,8 +17,18 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-  env:
-          SONAR_TOKEN: be91d2b036bc4907a95318631066cb0e75225bd9
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarEndpoint'
+    organization: 'v-abadalov'
+    scannerMode: 'Other'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner,
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.projectKey=v-abadalov_Tester
+      sonar.projectName=Tester
 - task: Maven@3
   inputs:
     mavenPomFile: 'maven-multimodule/pom.xml'
@@ -36,3 +46,6 @@ steps:
     sonarQubeRunAnalysis: true
     isJacocoCoverageReportXML: true
     sqMavenPluginVersionChoice: 'latest'
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
