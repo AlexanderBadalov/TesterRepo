@@ -29,24 +29,19 @@ steps:
       # sonar.exclusions=**/*.bin
       sonar.projectKey=v-abadalov_Tester
       sonar.projectName=Tester
-
-- task: MavenJacocoFix@3
+- task: Maven@3
   inputs:
     mavenPomFile: 'maven-multimodule/pom.xml'
-    goals: verify
-    options: -B -Drevision-suffix=$(Build.BuildNumber)
+    goals: 'package jacoco:report-aggregate sonar:sonar'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    codeCoverageToolOption: 'JaCoCo'
-    javaHomeOption: JDKVersion
+    javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
-    mavenVersionOption: Default
-    mavenOptions: -Xmx3072m
+    mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    isJacocoCoverageReportXML: true
-    sqMavenPluginVersionChoice: 'latest'
+    sonarQubeRunAnalysis: false
+
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
