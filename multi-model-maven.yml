@@ -29,9 +29,9 @@ steps:
       # sonar.exclusions=**/*.bin
       sonar.projectKey=v-abadalov_Tester
       sonar.projectName=Tester
-- task: MavenJacocoFix1@3
+- task: MavenJacocoFix@3
   inputs:
-    mavenPomFile: 'maven-multimodule/pom.xml'
+    mavenPomFile: 'maven-multi-module-unittest-integrationtest-jacoco/pom.xml'
     goals: verify
     options: -B -Drevision-suffix=$(Build.BuildNumber)
     publishJUnitResults: true
