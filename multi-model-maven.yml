@@ -29,6 +29,7 @@ steps:
       # sonar.exclusions=**/*.bin
       sonar.projectKey=v-abadalov_Tester
       sonar.projectName=Tester
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'maven-multimodule/pom.xml'
