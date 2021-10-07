@@ -33,10 +33,10 @@ steps:
   inputs:
     mavenPomFile: 'maven-multimodule/pom.xml'
     goals: verify
-    options: -B -Drevision-suffix=$(Build.BuildNumber)
+    options: -Dsonar.coverage.jacoco.xmlReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml  -B -Drevision-suffix=$(Build.BuildNumber) -sonar.coverageReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    codeCoverageToolOption: 'JaCoCo'
+    codeCoverageTool: JaCoCo
     javaHomeOption: JDKVersion
     jdkVersionOption: '1.11'
     mavenVersionOption: Default
