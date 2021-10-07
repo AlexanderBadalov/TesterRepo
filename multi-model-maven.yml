@@ -29,12 +29,11 @@ steps:
       # sonar.exclusions=**/*.bin
       sonar.projectKey=v-abadalov_Tester
       sonar.projectName=Tester
-
 - task: Maven@3
   inputs:
     mavenPomFile: 'maven-multimodule/pom.xml'
     goals: verify
-    options: -B -Drevision-suffix=$(Build.BuildNumber) Dsonar.coverage.jacoco.xmlReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml
+    options: Dsonar.coverage.jacoco.xmlReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml -B -Drevision-suffix=$(Build.BuildNumber) 
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     codeCoverageToolOption: 'JaCoCo'
