@@ -1,3 +1,39 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@AlexanderBadalov 
+AlexanderBadalov
+/
+TesterRepo
+Public
+1
+0
+0
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+6
+Insights
+Settings
+TesterRepo/sonar_examples/pom.xml
+@AlexanderBadalov
+AlexanderBadalov Changed aggregate repo
+Latest commit ddb045f 44 minutes ago
+ History
+ 1 contributor
+We found potential security vulnerabilities in your dependencies.
+Only the owner of this repository can see this message.
+
+86 lines (79 sloc)  2.44 KB
+   
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -21,11 +57,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.source>1.8</maven.compiler.source>
-               <!-- Sonar -->
-    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-    <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-    <sonar.language>java</sonar.language>
   </properties>
 
   <dependencies>
@@ -71,24 +102,34 @@
         <activeByDefault>true</activeByDefault>
       </activation>
       <build>
-<plugin>
-    <groupId>org.jacoco</groupId>
-    <artifactId>jacoco-maven-plugin</artifactId>
-    <version>0.6.0.201210061924</version>
-    <configuration>
-        <destFile>${sonar.jacoco.reportPath}</destFile>
-        <append>true</append>
-    </configuration>
-    <executions>
-        <execution>
-            <id>agent</id>
-            <goals>
-                <goal>prepare-agent</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
+        <plugins>
+          <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>prepare-agent</id>
+                <goals>
+                  <goal>prepare-agent</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
       </build>
     </profile>
   </profiles>
 </project>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
