@@ -31,7 +31,7 @@ steps:
       sonar.projectName=Tester
 - task: Maven@3
   inputs:
-    mavenPomFile: 'maven-multimodule/pom.xml'
+    mavenPomFile: 'sonar_examples/pom.xml'
     goals: verify
     options: -Dsonar.coverage.jacoco.xmlReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml  -B -Drevision-suffix=$(Build.BuildNumber) -Dsonar.coverageReportPaths=$(System.DefaultWorkingDirectory)\CCReport43F6D5EF\jacoco.xml
     publishJUnitResults: true
