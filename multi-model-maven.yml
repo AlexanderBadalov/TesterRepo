@@ -31,15 +31,15 @@ steps:
       sonar.projectName=Tester
 
 - task: Maven@3
-    inputs:
+  inputs:
       mavenPomFile: pom.xml
       goals: verify
       options: -B -Drevision-suffix=$(Build.BuildNumber)
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       codeCoverageToolOption: 'JaCoCo'
-      codeCoverageClassFilesDirectories: [valid options set]
-      codeCoverageSourceDirectories: [valid options set]
+      codeCoverageClassFilesDirectories: ["module1", "module2"]
+      codeCoverageSourceDirectories: ["module1", "module2", "tests"]
       javaHomeOption: JDKVersion
       jdkVersionOption: '1.11'
       mavenVersionOption: Default
