@@ -32,7 +32,7 @@ steps:
 
 - task: Maven@3
   inputs:
-      mavenPomFile: pom.xml
+      mavenPomFile: maven-multimodule/pom.xml
       goals: verify
       options: -B -Drevision-suffix=$(Build.BuildNumber)
       publishJUnitResults: true
