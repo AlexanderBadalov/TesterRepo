@@ -32,7 +32,7 @@ steps:
 
 - task: Maven@3
   inputs:
-    mavenPomFile: 'sonar_examples/pom.xml'
+    mavenPomFile: 'maven-multimodule/pom.xml'
     goals: 'verify'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
