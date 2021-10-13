@@ -34,16 +34,12 @@ steps:
   inputs:
       mavenPomFile: maven-multimodule/pom.xml
       goals: verify
-      options: -B -Drevision-suffix=$(Build.BuildNumber)
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       codeCoverageToolOption: 'JaCoCo'
-      codeCoverageClassFilesDirectories: "module1/*, module2/*"
-      codeCoverageSourceDirectories: "module1/*, module2/*, tests/*"
-      javaHomeOption: JDKVersion
+      javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.11'
-      mavenVersionOption: Default
-      mavenOptions: -Xmx3072m
+      mavenVersionOption: 'Default'
       mavenAuthenticateFeed: false
       effectivePomSkip: false
       sonarQubeRunAnalysis: true
