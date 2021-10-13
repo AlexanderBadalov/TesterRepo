@@ -34,6 +34,7 @@ steps:
   inputs:
       mavenPomFile: maven-multimodule/pom.xml
       goals: verify
+      options: -B -Drevision-suffix=$(Build.BuildNumber)
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       codeCoverageToolOption: 'JaCoCo'
