@@ -34,7 +34,7 @@ steps:
   inputs:
       mavenPomFile: maven-multimodule/pom.xml
       goals: verify
-      options: -B -Drevision-suffix=$(Build.BuildNumber)
+      options: -B -Drevision-suffix=$(Build.BuildNumber) -Dsonar.coverageReportPaths=$(Build.Repository.LocalPath)/CCReportPomA4D283EG.xml
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       codeCoverageToolOption: 'JaCoCo'
