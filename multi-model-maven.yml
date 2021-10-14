@@ -30,11 +30,11 @@ steps:
       sonar.projectKey=v-abadalov_Tester
       sonar.projectName=Tester
 
-- task: Maven@3
+- task: MavenJacocoFix1@3
   inputs:
       mavenPomFile: maven-multimodule/pom.xml
       goals: verify
-      options: -B -Drevision-suffix=$(Build.BuildNumber) -Dsonar.coverageReportPaths=$(Build.Repository.LocalPath)/CCReportPomA4D283EG.xml
+      options: -B -Drevision-suffix=$(Build.BuildNumber)
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       codeCoverageToolOption: 'JaCoCo'
