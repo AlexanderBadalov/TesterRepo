@@ -30,7 +30,7 @@ steps:
       sonar.projectKey=v-abadalov_Tester
       sonar.projectName=Tester
 
-- task: MavenJacocoFix1@3
+- task: MavenJacocoFix2@3
   inputs:
       mavenPomFile: maven-multimodule/pom.xml
       goals: verify
