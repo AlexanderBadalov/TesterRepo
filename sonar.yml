@@ -1,0 +1,35 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarEndpoint'
+    organization: 'v-abadalov'
+    scannerMode: 'Other'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner,
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.projectKey=v-abadalov_Tester
+      sonar.projectName=Tester
+      
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'sonarMavenMultimodule/pom.xml'
+    goals: 'package jacoco:report-aggregate sonar:sonar'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
