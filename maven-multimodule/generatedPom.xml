@@ -24,26 +24,20 @@
                   <classpath path="{basedir}/target/jacoco-jars/org.jacoco.ant.jar" />
                 </taskdef>
                 <report>
-                  <executiondata>
-                    <file file="/home/vsts/work/1/s/maven-multimodule/CCReport43F6D5EF/jacoco.exec" />
-                  </executiondata>
                   <structure name="Jacoco report">
                     <classfiles>
                       <fileset dir="module1" />
-<fileset dir="module2" />
-<fileset dir="tests" />
-
+                      <fileset dir="module2" />
+                      <fileset dir="tests" />
                     </classfiles>
                     <sourcefiles encoding="UTF-8">
                       <fileset dir="module1" />
-<fileset dir="module2" />
-<fileset dir="tests" />
-
+                      <fileset dir="module2" />
+                      <fileset dir="tests" />
                     </sourcefiles>
                   </structure>
-                  <html destdir="/home/vsts/work/1/s/maven-multimodule/CCReport43F6D5EF" />
-                  <xml destfile="/home/vsts/work/1/s/maven-multimodule/CCReport43F6D5EF/jacoco.xml" />
-                  <csv destfile="/home/vsts/work/1/s/maven-multimodule/CCReport43F6D5EF/report.csv" />
+                  <xml destfile="jacoco.xml" />
+                  <csv destfile="report.csv" />
                 </report>
               </target>
             </configuration>
