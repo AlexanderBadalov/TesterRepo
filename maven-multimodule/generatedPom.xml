@@ -1,17 +1,3 @@
-
-/usr/bin/mvn -f /home/vsts/work/1/s/maven-multimodule/pom.xml -B -Drevision-suffix=20211025.4 clean verify
- -Dsonar.coverage.jacoco.xmlReportPaths=/home/vsts/work/1/s/maven-multimodule/CCReport43F6D5EF/jacoco.xml
-  org.sonarsource.scanner.maven:sonar-maven-plugin:RELEASE:sonar
-
-  [INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (prepare-agent) @ sonarscanner-maven-aggregate ---
-  [INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default-prepare-agent-vsts) @ sonarscanner-maven-aggregate ---
-
-
-4 report the following command is executed
-/usr/bin/mvn -f /home/vsts/work/1/s/maven-multimodule/CCReportPomA4D283EG.xml -B -Drevision-suffix=20211025.4 verify -Dmaven.test.skip=true
-
-the structure of /home/vsts/work/1/s/maven-multimodule/CCReportPomA4D283EG.xml 
-
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
