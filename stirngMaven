@@ -1,0 +1,7 @@
+
+/usr/bin/mvn -f /home/vsts/work/1/s/maven-multimodule/pom.xml -B -Drevision-suffix=20211025.4 clean verify
+ -Dsonar.coverage.jacoco.xmlReportPaths=/home/vsts/work/1/s/maven-multimodule/CCReport43F6D5EF/jacoco.xml
+  org.sonarsource.scanner.maven:sonar-maven-plugin:RELEASE:sonar
+
+  [INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (prepare-agent) @ sonarscanner-maven-aggregate ---
+  [INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default-prepare-agent-vsts) @ sonarscanner-maven-aggregate ---
