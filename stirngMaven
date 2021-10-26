@@ -5,3 +5,7 @@
 
   [INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (prepare-agent) @ sonarscanner-maven-aggregate ---
   [INFO] --- jacoco-maven-plugin:0.8.6:prepare-agent (default-prepare-agent-vsts) @ sonarscanner-maven-aggregate ---
+
+
+4 report the following command is executed
+/usr/bin/mvn -f /home/vsts/work/1/s/maven-multimodule/CCReportPomA4D283EG.xml -B -Drevision-suffix=20211025.4 verify -Dmaven.test.skip=true
